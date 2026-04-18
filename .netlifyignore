@@ -1,0 +1,16 @@
+venv/
+.git/
+.kiro/
+.pytest_cache/
+.vscode/
+__pycache__/
+tests/
+samples/
+outputs/
+temp.pdf
+memory_store.json
+*.pyc
+*.pyo
+*.pyd
+*.dll
+*.lib

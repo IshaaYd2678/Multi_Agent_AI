@@ -3,7 +3,5 @@ openai
 python-dotenv
 PyMuPDF
 streamlit
-transformers
-torch
 plotly
 pandas

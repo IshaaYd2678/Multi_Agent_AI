@@ -12,10 +12,14 @@ dependencies = [
     "python-dotenv",
     "PyMuPDF",
     "streamlit",
-    "transformers",
-    "torch",
     "plotly",
     "pandas",
+]
+
+[project.optional-dependencies]
+intent-ml = [
+    "transformers",
+    "torch",
 ]
 
 [project.scripts]
