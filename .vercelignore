@@ -14,3 +14,13 @@ memory_store.json
 *.pyd
 *.dll
 *.lib
+app.py
+main.py
+streamlit_app.py
+classifier.py
+agents/
+memory/
+utils/
+requirements.txt
+pyproject.toml
+Procfile
