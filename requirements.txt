@@ -1,4 +1,5 @@
-﻿anthropic
+anthropic
+openai
 python-dotenv
 PyMuPDF
 streamlit
