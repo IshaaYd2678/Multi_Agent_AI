@@ -1,6 +1,7 @@
 # memory/shared_memory.py
 import json
 import os
+import tempfile
 from datetime import datetime
 from collections import defaultdict, Counter
 
@@ -135,7 +136,17 @@ class EnhancedMemoryStore:
             with open(self.storage_file, 'w', encoding='utf-8') as f:
                 json.dump(data_to_save, f, indent=2, ensure_ascii=False)
         except Exception as e:
-            print(f"Error saving to disk: {e}")
+            fallback_file = os.path.join(tempfile.gettempdir(), "multi_agent_ai_memory_store.json")
+            if os.path.abspath(self.storage_file) == os.path.abspath(fallback_file):
+                print(f"Error saving to disk: {e}")
+                return
+
+            try:
+                self.storage_file = fallback_file
+                with open(self.storage_file, 'w', encoding='utf-8') as f:
+                    json.dump(data_to_save, f, indent=2, ensure_ascii=False)
+            except Exception as fallback_error:
+                print(f"Error saving to disk: {fallback_error}")
     
     def load_from_disk(self):
         """Load memory store from disk"""

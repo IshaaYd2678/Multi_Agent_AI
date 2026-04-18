@@ -1,4 +1,4 @@
-anthropic
+﻿anthropic
 python-dotenv
 PyMuPDF
 streamlit

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multi-agent-ai"
+version = "0.1.0"
+description = "Multi-agent document processing app built with Streamlit."
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic",
+    "python-dotenv",
+    "PyMuPDF",
+    "streamlit",
+    "transformers",
+    "torch",
+    "plotly",
+    "pandas",
+]
+
+[project.scripts]
+app = "app:main"
+
+[tool.setuptools]
+py-modules = ["app", "classifier", "main", "streamlit_app"]
+packages = ["agents", "memory", "utils"]

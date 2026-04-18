@@ -155,7 +155,7 @@ def analyze_context(content):
         context_boost["Urgent"] = 2
     
     # Financial language
-    if re.search(r'\$|€|£|\d+\.\d{2}|payment|invoice|bill', content):
+    if re.search(r'\$|â‚¬|Â£|\d+\.\d{2}|payment|invoice|bill', content):
         context_boost["Invoice"] = 1
     
     # Question patterns

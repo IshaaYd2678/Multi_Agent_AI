@@ -226,9 +226,11 @@ if page == "📄 Document Processor":
             if file_ext == ".pdf" and PDF_SUPPORT:
                 file_type = "PDF"
                 bytes_data = uploaded_file.read()
-                with open("temp.pdf", "wb") as f:
-                    f.write(bytes_data)
-                input_text = read_pdf("temp.pdf")
+                try:
+                    input_text = read_pdf(bytes_data)
+                except ValueError as exc:
+                    st.error(f"Could not read PDF: {exc}")
+                    input_text = ""
                 
             elif file_ext == ".pdf" and not PDF_SUPPORT:
                 st.error("❌ PDF support not available. Please install PyMuPDF.")
