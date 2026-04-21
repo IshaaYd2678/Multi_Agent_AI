@@ -81,6 +81,21 @@ docker build -t multi-agent-ai .
 docker run -p 8501:8501 --env-file .env multi-agent-ai
 ```
 
+## Pre-Deployment Checklist
+
+Run this before pushing/deploying:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\predeploy-check.ps1
+```
+
+Optional flags:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\predeploy-check.ps1 -SkipTests
+powershell -ExecutionPolicy Bypass -File .\predeploy-check.ps1 -SkipDockerBuild
+```
+
 ## ðŸ’» Usage
 
 ### Web Interface (Streamlit)
