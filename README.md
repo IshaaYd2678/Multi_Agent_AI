@@ -62,6 +62,25 @@ A powerful and advanced document processing application built with Python and St
 4. **Environment Variables**:
    Create a `.env` file in the root directory and add any necessary API keys (like `OPENAI_API_KEY`).
 
+## ðŸŒ Deployment (Full Working App)
+
+This project is a Streamlit app and is best deployed on container-based platforms (Render, Railway, Fly.io, etc.).
+
+### Option A: Render (recommended)
+
+1. Push this repository to GitHub.
+2. In Render, create a **New Web Service** from this repo.
+3. Render will detect `render.yaml` and `Dockerfile` automatically.
+4. Add required environment variables in Render dashboard (`OPENAI_API_KEY`, etc.).
+5. Deploy.
+
+### Option B: Any Docker host
+
+```bash
+docker build -t multi-agent-ai .
+docker run -p 8501:8501 --env-file .env multi-agent-ai
+```
+
 ## ðŸ’» Usage
 
 ### Web Interface (Streamlit)

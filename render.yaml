@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: multi-agent-ai
+    env: docker
+    plan: free
+    autoDeploy: true
